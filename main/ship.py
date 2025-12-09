@@ -9,9 +9,6 @@ class ship:
         self.screen = game.screen
         self.screen_rect = game.screen.get_rect()
 
-        # Construct path to image relative to this file
-        # current_path = os.path.dirname(__file__)
-        # image_path = os.path.join(current_path, "..", "images", "rocket.png")
         self.image = pygame.image.load("images\\rocket.png")
         self.rect = self.image.get_rect()
         self.moving_left = False
@@ -28,9 +25,9 @@ class ship:
         if self.moving_left:
             self.rect.x -= 1
         if self.moving_up:
-            self.rect.y -= 0.5
+            self.rect.y -= 1
         if self.moving_down:
-            self.rect.y += 0.5
+            self.rect.y += 1
 
     def rocket(self):
         """drawing ship"""
