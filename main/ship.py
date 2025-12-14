@@ -40,3 +40,13 @@ class ship:
     def rocket(self):
         """drawing ship"""
         self.screen.blit(self.image, self.rect)
+
+    def resize(self, game):
+        """Update the ship's position and screen boundaries when the screen is resized."""
+        self.screen = game.screen
+        self.screen_rect = game.screen.get_rect()
+
+        # Optional: Reposition ship to center bottom if desired, or just clamp.
+        # For now, we just update bounds so it can move to the new edges.
+        # But we should ensure it's not lost off screen if shrinking?
+        # The user concern is "doesn't reach all four sides" (expanding), so just updating rect is enough.

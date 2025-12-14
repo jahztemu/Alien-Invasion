@@ -1,8 +1,12 @@
+import pygame
+
+
 class settings:
     """All setting for the game"""
 
     def __init__(self):
         self.screen_width = 1200
         self.screen_height = 800
-        self.bg_color = (0, 30, 0)
-        self.ship_speed = 8
+        self.bg_color = (230, 230, 230)
+        self.ship_speed = 0.5
+        self.fullscreen = False
