@@ -46,7 +46,12 @@ class ship:
         self.screen = game.screen
         self.screen_rect = game.screen.get_rect()
 
-        # Optional: Reposition ship to center bottom if desired, or just clamp.
-        # For now, we just update bounds so it can move to the new edges.
-        # But we should ensure it's not lost off screen if shrinking?
-        # The user concern is "doesn't reach all four sides" (expanding), so just updating rect is enough.
+        # Check if the ship is off-screen on the right or bottom and adjust if necessary
+        if self.rect.right > self.screen_rect.right:
+            self.rect.right = self.screen_rect.right
+        if self.rect.bottom > self.screen_rect.bottom:
+            self.rect.bottom = self.screen_rect.bottom
+
+        # Update the ship's position attributes
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
